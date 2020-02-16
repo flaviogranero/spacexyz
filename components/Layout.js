@@ -1,21 +1,26 @@
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 import {
   Generic,
   Container,
   Content,
   Navbar,
+  Footer,
   Section,
   Hero,
   Title,
-  Footer,
-} from 'rbx'
+} from 'rbx';
 
-const Layout = ({ children }) => {
+const Layout = ({ title, children }) => {
   return (
     <Generic>
+      <Head>
+        <title>{title || 'SpaceXYZ'}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar fixed="top" color="primary">
         <Navbar.Brand>
-          <Navbar.Item href="#">Bulma</Navbar.Item>
+          <Navbar.Item href="#">SpaceXYZ</Navbar.Item>
           <Navbar.Burger />
         </Navbar.Brand>
         <Navbar.Menu>
@@ -23,8 +28,8 @@ const Layout = ({ children }) => {
             <Link href="/">
               <Navbar.Item>Home</Navbar.Item>
             </Link>
-            <Link href="/about">
-              <Navbar.Item>About</Navbar.Item>
+            <Link href="/upcoming">
+              <Navbar.Item>Upcoming</Navbar.Item>
             </Link>
             <Link href="/contact">
               <Navbar.Item>Contact</Navbar.Item>
@@ -37,7 +42,7 @@ const Layout = ({ children }) => {
           <Hero.Body>
             <Container>
               <Title as="h1" align="center" color="white">
-                Welcome to Next!
+                {title}
               </Title>
             </Container>
           </Hero.Body>
@@ -48,11 +53,14 @@ const Layout = ({ children }) => {
       </Container>
       <Footer>
         <Content textAlign="centered">
-          <p>&copy; ZEIT, Inc. All rights reserved.</p>
+          <p>
+            <span>Public data from </span>
+            <a href="https://github.com/r-spacex/SpaceX-API">SpaceX-API</a>.
+          </p>
         </Content>
       </Footer>
     </Generic>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

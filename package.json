@@ -11,5 +11,11 @@
     "rbx": "^2.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
