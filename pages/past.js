@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Section, Card, Content, Title, Media, Image } from 'rbx';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
+import LaunchLink from '../components/LaunchLink';
 
 const Past = ({ launches }) => {
   return (
@@ -36,6 +37,11 @@ const Past = ({ launches }) => {
                 </time>
               </Content>
             </Card.Content>
+            <Card.Footer>
+              <Card.Footer.Item>
+                <LaunchLink id={launch.flight_number}>View Details</LaunchLink>
+              </Card.Footer.Item>
+            </Card.Footer>
           </Card>
         ))}
       </Section>
@@ -45,7 +51,7 @@ const Past = ({ launches }) => {
 
 Past.getInitialProps = async function() {
   const result = await fetch(
-    'https://api.spacexdata.com/v3/launches/past?limit=20',
+    'https://api.spacexdata.com/v3/launches/past?order=desc&limit=20',
   );
   const data = await result.json();
   return {
