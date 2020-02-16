@@ -31,6 +31,9 @@ const Layout = ({ title, children }) => {
             <Link href="/upcoming">
               <Navbar.Item>Upcoming</Navbar.Item>
             </Link>
+            <Link href="/past">
+              <Navbar.Item>Past</Navbar.Item>
+            </Link>
             <Link href="/contact">
               <Navbar.Item>Contact</Navbar.Item>
             </Link>

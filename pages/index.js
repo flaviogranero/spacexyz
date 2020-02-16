@@ -17,6 +17,18 @@ const Home = () => (
           </Content>
         </Card.Content>
       </Card>
+      <Card>
+        <Card.Content>
+          <Content>
+            <Link href="/past">
+              <a>
+                <Title as="h3">Past Launches</Title>
+                <p>See all SpaceX past launches</p>
+              </a>
+            </Link>
+          </Content>
+        </Card.Content>
+      </Card>
     </Section>
   </Layout>
 );
