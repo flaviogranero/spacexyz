@@ -1,15 +1,15 @@
 {
-  "name": "with-rbx-bulma-pro",
+  "name": "spacexyz",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "bulma-pro": "^0.1.7",
-    "next": "^9.1.8-canary.11",
+    "bulma-pro": "^0.1.8",
+    "next": "9.2.1",
     "rbx": "^2.2.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   }
 }
