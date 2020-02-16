@@ -1,42 +1,24 @@
-# rbx & bulma-pro example
+# SpaceXYZ
 
-This example shows how to use Next.js along with [rbx](https://github.com/dfee/rbx)(Bulma UI Framework for react) and [Bulma Pro](https://mubaidr.js.org/bulma-pro/).
+A Next.JS sample app consuming [SpaceX-API](https://github.com/r-spacex/SpaceX-API) for learning purposes.
 
-## Deploy your own
+The application was initially generated with `create-next-app` and [With RBX and Bulma Pro Example](https://github.com/zeit/next.js/tree/canary/examples/with-rbx-bulma-pro).
 
-Deploy the example using [ZEIT Now](https://zeit.co/now):
+- `/upcoming` route fetches all data in client side
+- `/past` route fetches data in server side, allowing Server-Side Rendering
+- `/launch/[id]` route is a Dynamic ROute example to show details about any launch given a `flight_number`
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-rbx-bulma-pro)
+## Development Mode
 
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Inside the project folder run:
 
 ```bash
-npm init next-app --example with-rbx-bulma-pro with-rbx-bulma-pro-app
-# or
-yarn create next-app --example with-rbx-bulma-pro with-rbx-bulma-pro-app
-```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-rbx-bulma-pro
-cd with-rbx-bulma-pro
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-# or
-yarn
+yarn install
 yarn dev
 ```
 
-Deploy it to the cloud with [ZEIT Now](https://zeit.co/new?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Deploy your own
+
+Deploy your own version using [ZEIT Now](https://zeit.co/now):
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/flaviogranero/spacexyz)
