@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import LaunchLink from '../components/LaunchLink';
 
 const Upcoming = () => {
-  const [launches, setLaunches] = useState([]);
+  const [launches, setLaunches] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch(
@@ -19,22 +19,23 @@ const Upcoming = () => {
   return (
     <Layout title="Upcoming Launches">
       <Section>
-        {!launches.length && <Title as="h3">Loading...</Title>}
-        {launches.map(launch => (
-          <Card key={launch.flight_number}>
-            <Card.Content>
-              <Content>
-                <LaunchLink id={launch.flight_number}>
-                  <Title as="h3">{launch.mission_name}</Title>
-                  <p>{launch.details}</p>
-                  <time dateTime={launch.launch_date_utc}>
-                    {launch.launch_date_utc}
-                  </time>
-                </LaunchLink>
-              </Content>
-            </Card.Content>
-          </Card>
-        ))}
+        {!launches && <Title as="h3">Loading...</Title>}
+        {launches &&
+          launches.map(launch => (
+            <Card key={launch.flight_number}>
+              <Card.Content>
+                <Content>
+                  <LaunchLink id={launch.flight_number}>
+                    <Title as="h3">{launch.mission_name}</Title>
+                    <p>{launch.details}</p>
+                    <time dateTime={launch.launch_date_utc}>
+                      {launch.launch_date_utc}
+                    </time>
+                  </LaunchLink>
+                </Content>
+              </Card.Content>
+            </Card>
+          ))}
       </Section>
     </Layout>
   );
