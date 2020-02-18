@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Section, Card, Content, Title, Media, Image } from 'rbx';
+import React from 'react';
+import { Section, Card, Content, Media, Image } from 'rbx';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../../components/Layout';
 
@@ -19,8 +19,10 @@ const Launch = ({ launch }) => {
           <Media.Item align="content">
             <Content>
               <p>
-                <strong>{launch.mission_name}</strong>{' '}
-                <small>{launch.rocket.rocket_name}</small>{' '}
+                <strong>{launch.mission_name}</strong>
+                {' • '}
+                <span>{launch.rocket.rocket_name}</span>
+                {' • '}
                 <time dateTime={launch.launch_date_utc}>
                   {launch.launch_date_utc}
                 </time>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Section, Card, Content, Title, Media, Image } from 'rbx';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
@@ -8,7 +8,6 @@ const Past = ({ launches }) => {
   return (
     <Layout title="Past Launches">
       <Section>
-        {!launches.length && <Title as="h3">Loading...</Title>}
         {launches.map(launch => (
           <Card key={launch.flight_number}>
             <Card.Content>
